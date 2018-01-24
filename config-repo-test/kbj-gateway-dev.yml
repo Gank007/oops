@@ -1,0 +1,88 @@
+#spring配置
+spring:
+  #数据源配置
+  datasource:
+    url: jdbc:mysql://192.168.2.121:3306/test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: '{cipher}AQBcYWOru6mo6V7cm/rJFeIj/ezr+zbt1cQt0GW4yzZYXwD7tqbKsbikpX9HGQqJEjTNRpU7fO3C6olqRyb6pD3yrb5X8jNVhaYATB+50wl0Vyck18uBIWu97LkrScz32Ct/nwKQE3Oa04GTelwHcAILJO2LmKhUoK9SJK49MkGx5PMlIgRU9GGd5iESABHHtYsXN3JyN78kXBSKgljJM7VTxmvWLO0unIoDlk9WRDEWogElkB4M0BnTzFZtky7gedZ2uvATInlOAJ7gUAYUV0BMlST31kExEsrNtt5Qyb9zTMqc2Je+c9YNj9RClzuiquMBR53EHWeJfLVu2lMhiFxCRhwLH12ahHnp0wxEcUMlIHcH8Ldl7peQfTAszlUoHhw='
+    driver-class-name: com.mysql.jdbc.Driver
+  #缓存服务器配置
+  cache:
+    type: redis
+
+  redis:
+    database: 1
+    host: localhost
+    pool:
+      max-active: 20
+    password: '{cipher}AQCwyCY8OUjnCS0t4dHw9hhI43CRL6IPK4I1hOP2vV+RJoGoNTyefyXV244Qr3W8zYUuxeLYjRVZphZ/5td6vj/Pc3qF/DoK4dGW2FojPerxRYPb7g/9+zQCu7kBVwqbWLACKFJrI12UToYEWXOROg2yi6Yttn898oEqZYoySy3q0t2qnP21UpNhTyIbJ52V5374t/NTc3d57ERM1zeZckVzSTC8JP6zK/0vJ3kvSTk9cbgZi8dqQ/ErkMBQxmBcMKw8CDIt9f7h2GP/SiqwL13PYEsBTcQNEJzaer6H5vxgJalZY2BU5SegUzIMCgP6pQGwqIN/qGTRLTsEKU6Xp0YfVcdwEmYP5wRLljkGw6p+u67yGYHo7tp6CgFVCTrhiT8='
+#模版缓存配置
+  thymeleaf:
+    cache: false
+  mvc:
+    view:
+      suffix: .html
+#API网关配置
+zuul:
+  #路由配置
+  routes:
+      sso: #登录认证服务
+        #响应的路径
+        path: /pay/**
+        #敏感头信息
+        sensitiveHeaders:
+        #重定向到的服务（根据服务id名称从注册中心获取服务地址）
+        serviceId:  kbj-pay
+      producer: #生产者服务
+        #响应的路径
+        path: /search/**
+        sensitiveHeaders:
+        #重定向到的服务（根据服务id名称从注册中心获取服务地址）
+        serviceId:  kbj-search
+    #添加代理头
+  add-proxy-headers: true
+
+#日志设置
+logging:
+  level:
+    org.springframework: error
+    org.hibernate: info
+    com.kbj.kbj_gateway.sso: debug
+#mybatis 配置
+mybatis:
+  type-aliases-package: com.kbj.kbj_gateway.*.domain
+  mapper-locations: classpath:mappers/*.xml
+
+  configuration:
+     #配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性。
+     map-underscore-to-camel-case: true
+#mappers 多个接口时逗号隔开
+mapper:
+  mappers: com.lf.util.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count,countSql
+#发送邮件配置
+custom:
+  mailConfig:
+    #服务器
+    mailHost: smtp.qq.com
+    #端口号
+    mailPort: 587
+    #邮箱账号
+    mailUsername: 1289251150@qq.com
+    #邮箱授权码
+    mailPassword: '{cipher}AQCYe6J4xZ0gaCsQvv1ESlGHfQnE6/ERPV+ZtCKohEJX0yE6ohT1E5c9swa/ScfTk5Sh9opLqpPpZw8ZEvduHVvUiWBxvwcReoQh6fdOV/aIgcbTNpU75+kb0ZX8igfAxHf42PFxSyXMlGU2zUETiNnOy1ul6e0rO/6wFbxLh7zw6nlzgiPv0QiYYgN7rG8tRGL0l3oVVTsLusdSLo9y+sDrrW8tlv6jCWP8ys2GySfN0YaKfP27AECezhgzXc9Zx/+1p61aNPmJFC/qYrzCNV9AdesO33yhoMqJ34fRtHn57cbz6oBFkJL1eP8SzPj+PIUD7nKhm9PKkDwuBor7maVgH2q9wMAbQ7LU6WUxRpC1G9Sf69w3xTX0UtQ4gM9crVR/jDKdSKfS7Od+cjl53Ue5'
+    #时间延迟
+    mailTimeout: 25000
+    #发送人
+    mailFrom: 1289251150@qq.com
+    #发件人名字
+    mailPersonal: 阿拉斯加他哥
+#  83551a3cb81b13eb8436f99a90823898
