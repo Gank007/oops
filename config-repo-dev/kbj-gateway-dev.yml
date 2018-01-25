@@ -1,11 +1,5 @@
 #spring配置
 spring:
-  #数据源配置
-  datasource:
-    url: jdbc:mysql://192.168.2.118:3306/test?useUnicode=true&characterEncoding=utf-8
-    username: root
-    password: '{cipher}AQBcYWOru6mo6V7cm/rJFeIj/ezr+zbt1cQt0GW4yzZYXwD7tqbKsbikpX9HGQqJEjTNRpU7fO3C6olqRyb6pD3yrb5X8jNVhaYATB+50wl0Vyck18uBIWu97LkrScz32Ct/nwKQE3Oa04GTelwHcAILJO2LmKhUoK9SJK49MkGx5PMlIgRU9GGd5iESABHHtYsXN3JyN78kXBSKgljJM7VTxmvWLO0unIoDlk9WRDEWogElkB4M0BnTzFZtky7gedZ2uvATInlOAJ7gUAYUV0BMlST31kExEsrNtt5Qyb9zTMqc2Je+c9YNj9RClzuiquMBR53EHWeJfLVu2lMhiFxCRhwLH12ahHnp0wxEcUMlIHcH8Ldl7peQfTAszlUoHhw='
-    driver-class-name: com.mysql.jdbc.Driver
   #缓存服务器配置
   cache:
     type: redis
@@ -48,26 +42,6 @@ logging:
     org.springframework: error
     org.hibernate: info
     com.kbj.kbj_gateway.sso: debug
-#mybatis 配置
-mybatis:
-  type-aliases-package: com.kbj.kbj_gateway.*.domain
-  mapper-locations: classpath:mappers/*.xml
-
-  configuration:
-     #配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性。
-     map-underscore-to-camel-case: true
-#mappers 多个接口时逗号隔开
-mapper:
-  mappers: com.lf.util.MyMapper
-  not-empty: false
-  identity: MYSQL
-
-#pagehelper
-pagehelper:
-  helperDialect: mysql
-  reasonable: true
-  supportMethodsArguments: true
-  params: count,countSql
 #发送邮件配置
 custom:
   mailConfig:
