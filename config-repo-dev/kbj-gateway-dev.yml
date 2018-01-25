@@ -2,7 +2,7 @@
 spring:
   #数据源配置
   datasource:
-    url: jdbc:mysql://192.168.2.121:3306/test?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://192.168.2.118:3306/test?useUnicode=true&characterEncoding=utf-8
     username: root
     password: '{cipher}AQBcYWOru6mo6V7cm/rJFeIj/ezr+zbt1cQt0GW4yzZYXwD7tqbKsbikpX9HGQqJEjTNRpU7fO3C6olqRyb6pD3yrb5X8jNVhaYATB+50wl0Vyck18uBIWu97LkrScz32Ct/nwKQE3Oa04GTelwHcAILJO2LmKhUoK9SJK49MkGx5PMlIgRU9GGd5iESABHHtYsXN3JyN78kXBSKgljJM7VTxmvWLO0unIoDlk9WRDEWogElkB4M0BnTzFZtky7gedZ2uvATInlOAJ7gUAYUV0BMlST31kExEsrNtt5Qyb9zTMqc2Je+c9YNj9RClzuiquMBR53EHWeJfLVu2lMhiFxCRhwLH12ahHnp0wxEcUMlIHcH8Ldl7peQfTAszlUoHhw='
     driver-class-name: com.mysql.jdbc.Driver
