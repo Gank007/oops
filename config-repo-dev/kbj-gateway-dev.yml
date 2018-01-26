@@ -10,6 +10,12 @@ spring:
     pool:
       max-active: 20
     password: '{cipher}AQCwyCY8OUjnCS0t4dHw9hhI43CRL6IPK4I1hOP2vV+RJoGoNTyefyXV244Qr3W8zYUuxeLYjRVZphZ/5td6vj/Pc3qF/DoK4dGW2FojPerxRYPb7g/9+zQCu7kBVwqbWLACKFJrI12UToYEWXOROg2yi6Yttn898oEqZYoySy3q0t2qnP21UpNhTyIbJ52V5374t/NTc3d57ERM1zeZckVzSTC8JP6zK/0vJ3kvSTk9cbgZi8dqQ/ErkMBQxmBcMKw8CDIt9f7h2GP/SiqwL13PYEsBTcQNEJzaer6H5vxgJalZY2BU5SegUzIMCgP6pQGwqIN/qGTRLTsEKU6Xp0YfVcdwEmYP5wRLljkGw6p+u67yGYHo7tp6CgFVCTrhiT8='
+    #消息中间件配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 #模版缓存配置
   thymeleaf:
     cache: false
@@ -29,10 +35,10 @@ zuul:
         serviceId:  kbj-pay
       producer: #生产者服务
         #响应的路径
-        path: /search/**
+        path: /management/**
         sensitiveHeaders:
         #重定向到的服务（根据服务id名称从注册中心获取服务地址）
-        serviceId:  kbj-search
+        serviceId:  kbj-management
     #添加代理头
   add-proxy-headers: true
 
@@ -60,3 +66,10 @@ custom:
     #发件人名字
     mailPersonal: 阿拉斯加他哥
 #  83551a3cb81b13eb8436f99a90823898
+#解决GET请求变成POST请求
+feign:
+  httpclient:
+    enabled: true
+#解决无法调用fallback
+  hystrix:
+    enabled: true
