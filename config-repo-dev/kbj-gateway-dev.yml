@@ -45,7 +45,7 @@ zuul:
 #日志设置
 logging:
   level:
-    org.springframework: error
+    org.springframework: debug
     org.hibernate: info
     com.kbj.kbj_gateway.sso: debug
 #发送邮件配置
