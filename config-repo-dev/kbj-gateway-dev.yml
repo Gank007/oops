@@ -19,6 +19,7 @@ spring:
 #模版缓存配置
   thymeleaf:
     cache: false
+    mode: LEGACYHTML5
   mvc:
     view:
       suffix: .html
