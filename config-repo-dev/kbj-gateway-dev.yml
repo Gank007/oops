@@ -42,6 +42,9 @@ zuul:
         serviceId:  kbj-management
     #添加代理头
   add-proxy-headers: true
+  host: 
+     connect-timeout-millis: 10000
+     socket-timeout-millis: 60000
 
 #日志设置
 logging:
@@ -74,3 +77,10 @@ feign:
 #解决无法调用fallback
   hystrix:
     enabled: true
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
