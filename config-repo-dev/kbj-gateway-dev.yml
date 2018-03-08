@@ -9,7 +9,7 @@ spring:
     host: 192.168.2.118
     pool:
       max-active: 20
-    password: '{cipher}AQCwyCY8OUjnCS0t4dHw9hhI43CRL6IPK4I1hOP2vV+RJoGoNTyefyXV244Qr3W8zYUuxeLYjRVZphZ/5td6vj/Pc3qF/DoK4dGW2FojPerxRYPb7g/9+zQCu7kBVwqbWLACKFJrI12UToYEWXOROg2yi6Yttn898oEqZYoySy3q0t2qnP21UpNhTyIbJ52V5374t/NTc3d57ERM1zeZckVzSTC8JP6zK/0vJ3kvSTk9cbgZi8dqQ/ErkMBQxmBcMKw8CDIt9f7h2GP/SiqwL13PYEsBTcQNEJzaer6H5vxgJalZY2BU5SegUzIMCgP6pQGwqIN/qGTRLTsEKU6Xp0YfVcdwEmYP5wRLljkGw6p+u67yGYHo7tp6CgFVCTrhiT8='
+    password: '{cipher}AQAUKgCbb/S1RNOEfR1f0R5uTkAIrSEvFwb+70NCVp4TSnE1I83faWNeTcD5IWFosGYVnHndftZEDm31G4H0TIT8RUSLYBqvY/PUcRs13auVqfG6zDJGYcHA+3Oqd2OOWB9Jhbt1kixsN2WFwi9FzYXz37QEKxn3WMjDIr3x8lL8b4+aB0pxwOTT2RKX/M26czAEnJprRXAmfEXL+/hA8vQwHBk2gtblq2DB3fg3ImGcpbCUCQSznaYsDhYQUlMierOh1Edg+2WqjFGhuJfFfZs/yu8dF7Dsma0eM1tTpKv1dQnfs1G0UEzI2lqZ8vNy5sCzeEfL/LtUaC9jDA69orc7K3QnGNEa+0S4yFI/l98ZVgVZD55fXhvo9FMa+iNVhtQ='
     #消息中间件配置
   rabbitmq:
     host: localhost
@@ -52,23 +52,7 @@ logging:
     org.springframework: info
     org.hibernate: info
     com.kbj.kbj_gateway.sso: debug
-#发送邮件配置
-custom:
-  mailConfig:
-    #服务器
-    mailHost: smtp.qq.com
-    #端口号
-    mailPort: 587
-    #邮箱账号
-    mailUsername: 1289251150@qq.com
-    #邮箱授权码
-    mailPassword: '{cipher}AQCYe6J4xZ0gaCsQvv1ESlGHfQnE6/ERPV+ZtCKohEJX0yE6ohT1E5c9swa/ScfTk5Sh9opLqpPpZw8ZEvduHVvUiWBxvwcReoQh6fdOV/aIgcbTNpU75+kb0ZX8igfAxHf42PFxSyXMlGU2zUETiNnOy1ul6e0rO/6wFbxLh7zw6nlzgiPv0QiYYgN7rG8tRGL0l3oVVTsLusdSLo9y+sDrrW8tlv6jCWP8ys2GySfN0YaKfP27AECezhgzXc9Zx/+1p61aNPmJFC/qYrzCNV9AdesO33yhoMqJ34fRtHn57cbz6oBFkJL1eP8SzPj+PIUD7nKhm9PKkDwuBor7maVgH2q9wMAbQ7LU6WUxRpC1G9Sf69w3xTX0UtQ4gM9crVR/jDKdSKfS7Od+cjl53Ue5'
-    #时间延迟
-    mailTimeout: 25000
-    #发送人
-    mailFrom: 1289251150@qq.com
-    #发件人名字
-    mailPersonal: 阿拉斯加他哥
+
 #  83551a3cb81b13eb8436f99a90823898
 #解决GET请求变成POST请求
 feign:
