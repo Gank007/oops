@@ -6,7 +6,7 @@ spring:
 
   redis:
     database: 1
-    host: localhost
+    host: 192.168.2.118
     pool:
       max-active: 20
     password: '{cipher}AQCwyCY8OUjnCS0t4dHw9hhI43CRL6IPK4I1hOP2vV+RJoGoNTyefyXV244Qr3W8zYUuxeLYjRVZphZ/5td6vj/Pc3qF/DoK4dGW2FojPerxRYPb7g/9+zQCu7kBVwqbWLACKFJrI12UToYEWXOROg2yi6Yttn898oEqZYoySy3q0t2qnP21UpNhTyIbJ52V5374t/NTc3d57ERM1zeZckVzSTC8JP6zK/0vJ3kvSTk9cbgZi8dqQ/ErkMBQxmBcMKw8CDIt9f7h2GP/SiqwL13PYEsBTcQNEJzaer6H5vxgJalZY2BU5SegUzIMCgP6pQGwqIN/qGTRLTsEKU6Xp0YfVcdwEmYP5wRLljkGw6p+u67yGYHo7tp6CgFVCTrhiT8='
