@@ -12,7 +12,7 @@ spring:
     password: '{cipher}AQAUKgCbb/S1RNOEfR1f0R5uTkAIrSEvFwb+70NCVp4TSnE1I83faWNeTcD5IWFosGYVnHndftZEDm31G4H0TIT8RUSLYBqvY/PUcRs13auVqfG6zDJGYcHA+3Oqd2OOWB9Jhbt1kixsN2WFwi9FzYXz37QEKxn3WMjDIr3x8lL8b4+aB0pxwOTT2RKX/M26czAEnJprRXAmfEXL+/hA8vQwHBk2gtblq2DB3fg3ImGcpbCUCQSznaYsDhYQUlMierOh1Edg+2WqjFGhuJfFfZs/yu8dF7Dsma0eM1tTpKv1dQnfs1G0UEzI2lqZ8vNy5sCzeEfL/LtUaC9jDA69orc7K3QnGNEa+0S4yFI/l98ZVgVZD55fXhvo9FMa+iNVhtQ='
     #消息中间件配置
   rabbitmq:
-    host: localhost
+    host: 192.168.2.118
     port: 5672
     username: guest
     password: guest
